@@ -1,0 +1,26 @@
+# M2: names unlabeled icon buttons from a cropped screenshot (see PRD.md, Models).
+name: m2-icon-namer
+base_model: microsoft/Florence-2-base   # MIT
+task: icon-to-accessible-name
+release: true
+weights_license: CC-BY-SA-4.0            # rico_semantics_google is share-alike
+
+datasets:
+  train: [widget_captioning, rico_semantics_google, lens_synthetic, lens_feedback]
+  eval: [widget_captioning, a11ybench]
+
+training:
+  method: lora
+  epochs: 3
+  learning_rate: 1.0e-4
+  batch_size: 16
+
+export:
+  format: onnx
+  quantize: int8
+  target: browser   # transformers.js
+
+ship_gate:
+  # Beat the prompted baseline on the held-out set, judged by human acceptance rate.
+  min_acceptance_rate: 0.70
+  baseline: prompted-vlm

@@ -1,0 +1,8 @@
+pyyaml>=6.0
+datasets>=4.0
+transformers>=4.57
+peft>=0.17
+accelerate>=1.10
+torch>=2.8
+optimum[onnxruntime]>=1.27
+evaluate>=0.4

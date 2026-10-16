@@ -1,0 +1,25 @@
+{
+  "name": "lens",
+  "private": true,
+  "description": "Open-source web accessibility audit, simulation, and fix assistant.",
+  "license": "MIT",
+  "packageManager": "npm@11.19.0",
+  "engines": {
+    "node": ">=24"
+  },
+  "workspaces": [
+    "apps/web",
+    "apps/worker",
+    "packages/core"
+  ],
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "typecheck": "turbo typecheck",
+    "test": "turbo test"
+  },
+  "devDependencies": {
+    "turbo": "^2.11.7",
+    "typescript": "^6.0.3"
+  }
+}

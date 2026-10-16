@@ -1,0 +1,19 @@
+# Minimal local config for `npx supabase start`. Run `npx supabase init` to regenerate a full one if needed.
+project_id = "lens"
+
+[api]
+port = 54321
+
+[db]
+port = 54322
+major_version = 17
+
+[studio]
+port = 54323
+
+[auth]
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["http://localhost:3000/auth/callback"]
+
+[auth.email]
+enable_signup = true

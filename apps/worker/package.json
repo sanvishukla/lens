@@ -1,0 +1,21 @@
+{
+  "name": "@lens/worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch --env-file-if-exists=../../.env src/index.ts",
+    "start": "node src/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@lens/core": "*",
+    "@supabase/supabase-js": "^2.117.3",
+    "playwright": "^1.64.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24",
+    "typescript": "^6.0.3"
+  }
+}

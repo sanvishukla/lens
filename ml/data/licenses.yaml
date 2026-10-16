@@ -1,0 +1,117 @@
+# Every dataset a training config may reference. The checker rejects anything not listed here.
+#
+# uses:
+#   train      weights trained on it may be released
+#   eval       benchmarking only, never in training data
+#   research   training allowed for internal experiments, weights must NOT be released
+#   retrieval  may be embedded and quoted in the RAG corpus
+# share_alike: true means released weights inherit CC BY-SA 4.0.
+# Re-verify a license at its source before first download; record the date.
+
+datasets:
+  widget_captioning:
+    license: CC-BY-4.0
+    source: https://github.com/google-research-datasets/widget-caption
+    uses: [train, eval]
+    share_alike: false
+  screen2words:
+    license: CC-BY-4.0
+    source: https://github.com/google-research-datasets/screen2words
+    uses: [train, eval]
+    share_alike: false
+  rico_semantics_google:
+    license: CC-BY-SA-4.0
+    source: https://github.com/google-research-datasets/rico_semantics
+    uses: [train, eval]
+    share_alike: true
+  rico_semantic_hf:
+    license: CC-BY-4.0
+    source: https://huggingface.co/datasets/rootsautomation/RICO-SCA
+    uses: [train, eval]
+    share_alike: false
+  webui:
+    license: research-only
+    source: https://uimodeling.github.io/
+    uses: [research, eval]
+    share_alike: false
+  accessguru:
+    license: CC-BY-4.0
+    source: https://darus.uni-stuttgart.de/
+    uses: [train, eval]
+    share_alike: false
+  weba11ybench:
+    license: CC-BY-4.0
+    source: https://huggingface.co/datasets
+    uses: [eval]
+    share_alike: false
+  a11ybench:
+    license: MIT
+    source: https://github.com/
+    uses: [train, eval]
+    share_alike: false
+  onestopenglish:
+    license: CC-BY-SA-4.0
+    source: https://github.com/nishkalavallabhi/OneStopEnglishCorpus
+    uses: [train, eval]
+    share_alike: true
+  wikilarge_clean:
+    license: CC-BY-SA-4.0
+    source: https://huggingface.co/datasets
+    uses: [train, eval]
+    share_alike: true
+  asset:
+    license: CC-BY-NC-4.0
+    source: https://github.com/facebookresearch/asset
+    uses: [eval]
+    share_alike: false
+  vizwiz_captions:
+    license: unclear
+    source: https://vizwiz.org/tasks-and-datasets/image-captioning/
+    uses: [eval]
+    share_alike: false
+  concadia:
+    license: per-image-wikimedia
+    source: https://github.com/elisakreiss/concadia
+    uses: [research, eval]
+    share_alike: false
+  vistext:
+    license: GPL-3.0
+    source: https://github.com/mitvis/vistext
+    uses: [eval]
+    share_alike: false
+  chartqa:
+    license: GPL-3.0
+    source: https://github.com/vis-nlp/ChartQA
+    uses: [eval]
+    share_alike: false
+  librispeech:
+    license: CC-BY-4.0
+    source: https://www.openslr.org/12
+    uses: [train, eval]
+    share_alike: false
+  common_voice:
+    license: CC0-1.0
+    source: https://datacollective.mozillafoundation.org/
+    uses: [train, eval]
+    share_alike: false
+    note: Download terms via Mozilla Data Collective apply; record acceptance before use.
+  torgo:
+    license: non-commercial-academic
+    source: https://www.cs.toronto.edu/~complingweb/data/TORGO/torgo.html
+    uses: [research, eval]
+    share_alike: false
+  w3c_wcag:
+    license: W3C-Document-License
+    source: https://www.w3.org/TR/WCAG22/
+    uses: [retrieval]
+    share_alike: false
+  lens_synthetic:
+    license: MIT
+    source: ml/synthetic
+    uses: [train, eval]
+    share_alike: false
+  lens_feedback:
+    license: CC-BY-4.0
+    source: suggestions table, training_opt_in = true only
+    uses: [train, eval]
+    share_alike: false

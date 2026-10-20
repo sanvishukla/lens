@@ -4,10 +4,10 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const MESSAGES: Record<string, string> = {
-  queued: "Waiting for a scanner. This usually takes a few seconds.",
-  running: "Loading the page and running checks. This usually takes under a minute.",
-  done: "Scan finished. Loading the report.",
-  failed: "The scan failed. Loading the details.",
+  queued: "Waiting for an available scanner. This usually takes a few seconds.",
+  running: "Loading the page and running accessibility checks. This usually takes under a minute.",
+  done: "Scan completed. Loading your report.",
+  failed: "The scan could not be completed. Loading details.",
 };
 
 export function ScanProgress({ shareId, initialStatus }: { shareId: string; initialStatus: string }) {
@@ -30,7 +30,7 @@ export function ScanProgress({ shareId, initialStatus }: { shareId: string; init
 
   return (
     <p role="status">
-      {MESSAGES[status] ?? "Working…"} This page updates by itself; you don&apos;t need to reload.
+      {MESSAGES[status] ?? "Processing…"} This page updates automatically; no need to refresh.
     </p>
   );
 }

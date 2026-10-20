@@ -22,13 +22,13 @@ export const affectedGroupSchema = z.enum([
 export type AffectedGroup = z.infer<typeof affectedGroupSchema>;
 
 export const GROUP_LABELS: Record<AffectedGroup, string> = {
-  blind: "Screen readers",
-  "low-vision": "Zoom and low vision",
-  "color-vision": "Color as the only cue",
-  keyboard: "Keyboard only",
-  motor: "Touch and motor",
-  cognitive: "Reading and focus",
-  "deaf-hoh": "Sound off",
+  blind: "Screen reader users",
+  "low-vision": "Low vision & zoom users",
+  "color-vision": "Color vision deficiencies",
+  keyboard: "Keyboard-only navigation",
+  motor: "Touch & motor accessibility",
+  cognitive: "Cognitive & reading focus",
+  "deaf-hoh": "Deaf & hard of hearing",
 };
 
 export const boxSchema = z.object({

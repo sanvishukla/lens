@@ -16,25 +16,25 @@ export default async function KeyboardPage({ params }: { params: Promise<{ repor
 
   return (
     <>
-      <h1>Tab</h1>
+      <h1>Keyboard navigation</h1>
       <p>
-        Lens pressed Tab through the page and recorded where focus went. {stops.length} tab stops.{" "}
-        {invisible > 0 && <span className="problem">Problem: {invisible} show no visible focus. </span>}
+        Lens navigated through the page using Tab key presses and mapped the focus path. {stops.length} tab stop(s) recorded.{" "}
+        {invisible > 0 && <span className="problem">Issue: {invisible} stop(s) show no visible focus indicator. </span>}
         {result.keyboardTrap && (
-          <span className="problem">Problem: focus gets trapped before reaching the end of the page.</span>
+          <span className="problem">Issue: Focus gets trapped within a component before reaching the end of the page.</span>
         )}
       </p>
 
       {shot && (
         <>
-          <h2>Tab path on the page</h2>
+          <h2>Tab sequence on page</h2>
           <ul className="legend">
-            <li>Solid outline: focus is visible</li>
-            <li data-tone="problem">Dashed outline: no visible focus</li>
+            <li>Solid outline: Focus indicator is visible</li>
+            <li data-tone="problem">Dashed outline: Missing visible focus indicator</li>
           </ul>
           <BoxOverlay
             src={shot.url}
-            alt="Screenshot of the page with each tab stop numbered in order. The same stops are listed under Tab order."
+            alt="Screenshot of the page with each tab stop numbered in sequential order. The same stops are listed under Tab sequence."
             width={shot.capture.width}
             height={shot.capture.pageHeight}
             boxes={stops.map((s) => ({
@@ -46,14 +46,14 @@ export default async function KeyboardPage({ params }: { params: Promise<{ repor
         </>
       )}
 
-      <h2>Tab order</h2>
+      <h2>Tab sequence</h2>
       <ol>
         {stops.map((s) => (
           <li key={s.index}>
             <strong>{s.label ?? s.name}</strong>
-            {!s.name && <span className="problem"> No accessible name.</span>}{" "}
+            {!s.name && <span className="problem"> Missing accessible name.</span>}{" "}
             <code>{s.selector}</code>
-            {!s.focusVisible && <span className="problem"> No visible focus.</span>}
+            {!s.focusVisible && <span className="problem"> No visible focus indicator.</span>}
           </li>
         ))}
       </ol>

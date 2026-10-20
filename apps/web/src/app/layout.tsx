@@ -14,9 +14,9 @@ const display = Fraunces({
 const mono = Atkinson_Hyperlegible_Mono({ subsets: ["latin"], variable: "--font-mono", display: "swap" });
 
 export const metadata: Metadata = {
-  title: { default: "Lens: put your site through glass", template: "%s · Lens" },
+  title: { default: "Lens · Web Accessibility Audit & Simulation", template: "%s · Lens" },
   description:
-    "Free, open-source checks for how a page is actually used: heard in order, seen without color, walked with Tab, hit with a thumb. Then drafts you review.",
+    "Free, open-source accessibility audit and simulation tool: experience your site through screen readers, color vision deficiency simulations, keyboard navigation, and touch target checks.",
 };
 
 export const viewport: Viewport = {
@@ -63,8 +63,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               <span className="logo-mark" aria-hidden="true" /> Lens
             </p>
             <p>
-              Automated checks catch some barriers, not all. Pair Lens with testing by people who use a screen reader,
-              a keyboard, or a switch every day.
+              Automated checks identify many accessibility barriers, but cannot replace testing with real assistive technology users. Pair automated tools with testing by people who rely on screen readers, keyboards, and switch devices every day.
             </p>
             <p>
               <Link href="/accessibility">Accessibility statement and feedback</Link>

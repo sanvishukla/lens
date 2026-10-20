@@ -17,12 +17,11 @@ export default async function ReportLayout({
     <div className="sheet">
       {reportId === DEMO_SHARE_ID && (
         <p className="notice">
-          <strong>Bloom Market, a made-up flower shop.</strong> Each note below names the part of the page it is about:
-          the cart icon, the peony photo, the grey prices, the Sale button.
+          <strong>Bloom Market, a sample e-commerce storefront.</strong> Each finding below highlights a specific accessibility issue on the page: missing button names, absent image descriptions, low-contrast text, and invisible focus indicators.
         </p>
       )}
       <div className="report-head">
-        <p className="eyebrow">Looking at</p>
+        <p className="eyebrow">Audited page</p>
         <p className="report-title">{result?.title || target}</p>
         {result?.title && <p className="report-url">{target}</p>}
       </div>

@@ -16,31 +16,30 @@ export default async function TargetsPage({ params }: { params: Promise<{ report
 
   return (
     <>
-      <h1>Tap</h1>
+      <h1>Touch & target sizes</h1>
       <p>
-        Small targets are hard to hit with a tremor, a stylus, or a thumb. WCAG 2.5.8 asks for at least 24 by 24 CSS
-        pixels.{" "}
+        Interactive targets that are too small are difficult to activate accurately, especially for users with motor tremors, those using a stylus, or anyone navigating on a touch screen. WCAG 2.5.8 requires interactive targets to be at least 24×24 CSS pixels.{" "}
         {small.length === 0 ? (
-          "Every target measured meets it."
+          "Every evaluated target meets the minimum size requirement."
         ) : (
-          <span className="problem">Problem: {small.length} targets are smaller.</span>
+          <span className="problem">Issue: {small.length} target(s) are smaller than 24×24 pixels.</span>
         )}
       </p>
       <p>
         {reflowFails ? (
           <span className="problem">
-            Problem: at 320px wide the page scrolls sideways (WCAG 1.4.10), which is hard for people who zoom in.
+            Issue: At 320px viewport width, the page requires horizontal scrolling (WCAG 1.4.10), presenting barriers for users who rely on screen magnification.
           </span>
         ) : (
-          "The page fits a 320px-wide screen without sideways scrolling."
+          "The layout fits a 320px-wide viewport without horizontal scrolling."
         )}
       </p>
 
       {shot && small.length > 0 && (
         <>
-          <h2>Small targets on the page</h2>
+          <h2>Undersized targets on page</h2>
           <ul className="legend">
-            <li data-tone="problem">Dashed outline: smaller than 24 by 24 pixels</li>
+            <li data-tone="problem">Dashed outline: Smaller than 24×24 pixels</li>
           </ul>
           <BoxOverlay
             src={shot.url}

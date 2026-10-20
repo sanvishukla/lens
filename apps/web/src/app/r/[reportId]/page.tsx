@@ -28,11 +28,11 @@ export default async function ReportSummaryPage({ params }: { params: Promise<{ 
 
   return (
     <>
-      <h1>What&apos;s snagging</h1>
+      <h1>Audit findings</h1>
       <p className="lede">
         {findings.length === 0
-          ? "No automated issues found. That's a good start; still try it with a keyboard and a screen reader."
-          : `${findings.length} barriers on ${elementCount} parts of this page. The notes name the part, not just the rule.`}
+          ? "No automated accessibility issues found. While this is a strong foundation, manual testing with keyboards and screen readers is always recommended."
+          : `${findings.length} accessibility barriers identified across ${elementCount} elements on this page. Notes pinpoint the exact component, not just the rule.`}
       </p>
 
       <ul className="tiles" aria-label="Issues by impact">
@@ -48,7 +48,7 @@ export default async function ReportSummaryPage({ params }: { params: Promise<{ 
 
       {byGroup.size > 0 && (
         <section className="section-tight" aria-labelledby="who-title">
-          <h2 id="who-title">Where these barriers show up</h2>
+          <h2 id="who-title">Barriers by impacted group</h2>
           <ul className="bars">
             {[...byGroup]
               .sort((a, b) => b[1] - a[1])
@@ -67,13 +67,13 @@ export default async function ReportSummaryPage({ params }: { params: Promise<{ 
       )}
 
       <section className="section-tight" aria-labelledby="issues-title">
-        <h2 id="issues-title">Issues, most severe first</h2>
+        <h2 id="issues-title">Issues ordered by severity</h2>
         {findings.map((f) => (
           <FindingCard key={f.id} finding={f} />
         ))}
       </section>
 
-      <p className="hint">Checked with axe-core {result.engines.axe} and Lens&apos;s own keyboard, reflow, and focus rules.</p>
+      <p className="hint">Audited using axe-core {result.engines.axe} alongside Lens&apos;s built-in keyboard, reflow, and focus checks.</p>
     </>
   );
 }

@@ -15,12 +15,11 @@ export default async function FixesPage({ params }: { params: Promise<{ reportId
 
   return (
     <>
-      <h1>Mend</h1>
+      <h1>Remediation & fixes</h1>
       <p>
-        AI drafts are starting points. Check each one against the page before you ship it: you know the context, the
-        model doesn&apos;t. Your accept, edit, and reject choices help improve Lens.
+        AI-assisted recommendations provide a starting point for addressing accessibility barriers. Review each draft in context before implementing it in your codebase. Your accept, edit, or reject feedback helps refine future suggestions.
       </p>
-      {findings.length === 0 && <p>Nothing to fix from the automated checks.</p>}
+      {findings.length === 0 && <p>No issues requiring remediation were identified by the automated checks.</p>}
       {findings.map((f) => (
         <section key={f.id} className="finding" data-impact={f.impact} aria-labelledby={`fix-${f.id}`}>
           <h2 id={`fix-${f.id}`}>{f.help}</h2>
@@ -35,7 +34,7 @@ export default async function FixesPage({ params }: { params: Promise<{ reportId
               kinds={suggestionKindsFor(f.rule_id)}
             />
           ))}
-          {f.nodes.length > 5 && <p>{f.nodes.length - 5} more elements have the same issue.</p>}
+          {f.nodes.length > 5 && <p>{f.nodes.length - 5} additional elements have the same issue.</p>}
         </section>
       ))}
     </>

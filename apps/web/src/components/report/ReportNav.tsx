@@ -5,11 +5,11 @@ import { usePathname } from "next/navigation";
 
 const TABS = [
   { slug: "", label: "Summary" },
-  { slug: "screen-reader", label: "Listen" },
-  { slug: "vision", label: "See" },
-  { slug: "keyboard", label: "Tab" },
-  { slug: "targets", label: "Tap" },
-  { slug: "fixes", label: "Mend" },
+  { slug: "screen-reader", label: "Screen reader" },
+  { slug: "vision", label: "Vision" },
+  { slug: "keyboard", label: "Keyboard" },
+  { slug: "targets", label: "Touch & motor" },
+  { slug: "fixes", label: "Fixes" },
 ];
 
 export function ReportNav({ reportId }: { reportId: string }) {

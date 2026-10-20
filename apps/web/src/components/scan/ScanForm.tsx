@@ -65,21 +65,21 @@ export function ScanForm() {
         <div className="choice-row">
           <label className="choice">
             <input type="radio" name="mode" value="url" checked={mode === "url"} onChange={() => { setMode("url"); setError(null); }} />
-            A web address
+            Website URL
           </label>
           <label className="choice">
             <input type="radio" name="mode" value="html" checked={mode === "html"} onChange={() => { setMode("html"); setError(null); }} />
-            Pasted HTML
+            HTML snippet
           </label>
         </div>
       </fieldset>
 
       <div className="form-row">
-        <label htmlFor={fieldId}>{mode === "url" ? "Page address" : "HTML"}</label>
+        <label htmlFor={fieldId}>{mode === "url" ? "Website URL" : "HTML code"}</label>
         <p id={hintId} className="hint">
           {mode === "url"
-            ? "A public page, starting with https://. Pages behind a login can't be scanned yet."
-            : "A full page or a snippet. Nothing you paste is shared unless you share the report link."}
+            ? "A public web page, starting with https://. Pages behind authentication cannot be scanned yet."
+            : "A full page or HTML snippet. Your code remains private unless you share the report link."}
         </p>
         {error && (
           <p id={`${fieldId}-error`} className="error">
@@ -116,7 +116,7 @@ export function ScanForm() {
         {pending ? "Starting scan…" : "Scan page"}
       </button>
       <p role="status" className="visually-hidden">
-        {pending ? "Starting scan. You'll be taken to the report." : ""}
+        {pending ? "Starting scan. You will be redirected to the report." : ""}
       </p>
     </form>
   );

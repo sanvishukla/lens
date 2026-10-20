@@ -6,30 +6,31 @@ import { useId, useState } from "react";
 const MODES = [
   {
     id: "original",
-    label: "As designed",
-    caption: "A small flower shop, the way its designer sees it.",
+    label: "Default view",
+    caption: "The standard storefront design as rendered for users without vision impairments.",
   },
   {
     id: "color",
-    label: "Color blind",
+    label: "Color vision",
     caption:
-      "With deuteranopia, the red Buy button and the green Sale button turn the same olive brown. Color is the only thing telling them apart.",
+      "With deuteranopia (green blindness), the red Buy button and green Sale button appear as the same olive tone, leaving color as the sole differentiator.",
   },
   {
     id: "blur",
     label: "Low vision",
-    caption: "With blurred vision, the pale grey price and delivery text all but disappear. It fails WCAG contrast at 2.1 to 1.",
+    caption:
+      "Under blurred vision, low-contrast text such as delivery details fades significantly, failing WCAG contrast guidelines (2.1:1 vs required 4.5:1).",
   },
   {
     id: "speech",
     label: "Screen reader",
     caption:
-      "A screen reader hears \"button\" with no name for the cart, and \"image\" with no description for the bouquet. Two dead ends.",
+      "A screen reader announces an unnamed 'button' for the cart and an undescribed 'image' for the bouquet, creating navigation dead ends.",
   },
   {
     id: "keys",
     label: "Keyboard",
-    caption: "Pressing Tab moves through five stops. On the Sale button, focus is invisible, so you lose your place.",
+    caption: "Tabbing moves through interactive elements. On the Sale button, focus is completely invisible, causing users to lose their position.",
   },
 ] as const;
 

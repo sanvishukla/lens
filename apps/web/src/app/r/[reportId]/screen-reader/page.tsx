@@ -12,10 +12,9 @@ export default async function ScreenReaderPage({ params }: { params: Promise<{ r
 
   return (
     <>
-      <h1>Listen</h1>
+      <h1>Screen reader</h1>
       <p>
-        The page in the order a screen reader moves through it, from the browser&apos;s accessibility tree. This is a
-        sketch, not a stand-in for NVDA, JAWS, or VoiceOver.
+        The page rendered in the sequential order a screen reader traverses it, generated from the browser&apos;s accessibility tree. This serves as an interactive preview, not a substitute for testing with full screen readers like NVDA, JAWS, or VoiceOver.
       </p>
       <ReadingOrder nodes={result.readingOrder} />
     </>

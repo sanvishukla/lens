@@ -15,15 +15,14 @@ export default async function VisionPage({ params }: { params: Promise<{ reportI
 
   return (
     <>
-      <h1>See</h1>
+      <h1>Vision simulation</h1>
       <p>
-        Color-vision filters (Machado et al., 2009), blur, and washed-out contrast. Use them to catch meaning that lives
-        only in hue, and type that fades.
+        Simulate color vision deficiencies (based on Machado et al., 2009), blur, and reduced contrast. Use these filters to identify information conveyed solely through color or text that loses legibility.
       </p>
       <p>
         {contrastIssues === 0
-          ? "No text contrast failures found."
-          : `${contrastIssues} text elements fail WCAG contrast (1.4.3).`}
+          ? "No text contrast failures detected."
+          : `${contrastIssues} text element(s) fail WCAG contrast minimums (Criterion 1.4.3).`}
       </p>
       {shot ? <VisionSimulator src={shot.url} /> : <p>No screenshot was captured for this page.</p>}
     </>

@@ -7,34 +7,33 @@ export default function AccessibilityStatementPage() {
     <div className="sheet">
       <h1>Accessibility statement</h1>
       <p>
-        Lens finds barriers on other sites, so it has to stay usable itself: with a keyboard, a screen reader, zoom, and
-        high contrast. We aim to meet WCAG 2.2 at level AA.
+        Lens evaluates accessibility barriers on other sites, so it is vital that our own interface remains fully
+        accessible: via keyboard, screen reader, magnification, and high-contrast modes. We aim to conform to WCAG 2.2 Level AA standards.
       </p>
 
       <h2>What we do</h2>
       <ul>
-        <li>Every page works with a keyboard alone, with a visible focus indicator.</li>
-        <li>Pages use landmarks, a logical heading order, and labelled form fields.</li>
-        <li>Status changes (scan progress, AI drafts, saved choices) are announced to screen readers.</li>
-        <li>Text and controls meet WCAG contrast ratios in light and dark mode, and the layout works at 320px wide and 400% zoom.</li>
-        <li>We respect your system settings for dark mode, reduced motion, and high-contrast (forced colors) mode.</li>
-        <li>Each release is checked with axe-core and tested by hand with NVDA and VoiceOver.</li>
+        <li>Every page operates with a keyboard alone, featuring a clearly visible focus indicator.</li>
+        <li>Pages use semantic landmarks, a logical heading hierarchy, and clearly labeled form controls.</li>
+        <li>Status changes (scan progress, AI drafts, saved preferences) are announced to screen readers.</li>
+        <li>Text and interactive controls meet WCAG contrast ratios in both light and dark modes, supporting layouts at 320px width and 400% zoom.</li>
+        <li>We respect system preferences for dark mode, reduced motion, and high-contrast (forced colors) mode.</li>
+        <li>Every release is audited with axe-core and manually tested with NVDA and VoiceOver.</li>
       </ul>
 
       <h2>Known limitations</h2>
       <ul>
         <li>
-          Screenshots in the vision, keyboard, and motor lenses are images of other sites. Everything they show is also
-          listed as text below them.
+          Screenshots within the vision, keyboard, and motor lenses are static captures of external sites. All visual findings are also provided in text format directly beneath each image.
         </li>
-        <li>The &ldquo;Listen to the page&rdquo; button uses your device&apos;s voice, which may differ from your screen reader.</li>
-        <li>AI drafts may be wrong. They are always labelled and never applied without your choice.</li>
+        <li>The &ldquo;Listen to the page&rdquo; feature uses browser text-to-speech synthesis, which may pronounce content differently than dedicated screen readers like NVDA, JAWS, or VoiceOver.</li>
+        <li>AI recommendations are initial drafts. They are explicitly labeled and are never applied to source code without your review and approval.</li>
       </ul>
 
-      <h2>Tell us about a barrier</h2>
+      <h2>Report an accessibility barrier</h2>
       <p>
-        If something in Lens doesn&apos;t work for you, please <a href="https://github.com/">open an issue on GitHub</a>.
-        Include the page and what you were trying to do. Accessibility bugs are fixed before new features.
+        If something in Lens is not working for you, please <a href="https://github.com/">open an issue on GitHub</a>.
+        Please include the page URL and the action you were attempting to perform. Accessibility issues are prioritized ahead of new feature work.
       </p>
     </div>
   );

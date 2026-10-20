@@ -27,7 +27,7 @@ export function FindingCard({ finding }: { finding: FindingRow }) {
           <dd>{finding.wcag.length ? finding.wcag.join(", ") : "Best practice"}</dd>
         </div>
         <div>
-          <dt>Gets in the way of</dt>
+          <dt>Impacts</dt>
           <dd>{(finding.groups as AffectedGroup[]).map((g) => GROUP_LABELS[g]).join(", ")}</dd>
         </div>
       </dl>
@@ -41,13 +41,13 @@ export function FindingCard({ finding }: { finding: FindingRow }) {
       </ul>
       {count > 8 && (
         <p>
-          And {count - 8} more {count - 8 === 1 ? "element" : "elements"}.
+          And {count - 8} additional {count - 8 === 1 ? "element" : "elements"}.
         </p>
       )}
       {finding.help_url && (
         <p>
           <a href={finding.help_url}>
-            How to fix<span className="visually-hidden">: {finding.help}</span>
+            Remediation guide<span className="visually-hidden">: {finding.help}</span>
           </a>
         </p>
       )}
